@@ -21,4 +21,13 @@ function openCity(evt, cityName) {
 
 function init(){
     document.getElementById("defaultOpen").click();
+    
+}
+
+function inspire(){
+    fetch("http://127.0.0.1:3000/api/random_word")
+    .then(response => response.text())
+    .then(response => {
+        
+    });
 }
