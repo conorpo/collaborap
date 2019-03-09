@@ -1,42 +1,60 @@
+* {
+    overflow:hidden
+}
+
 html {
     height: 100vh;
-  }
-  
-  body {
+}
+
+body {
     height: 100vh;
     margin: 0;
-  }
-  
-  .topbar {
+}
+
+.topbar {
     background-color:#050510;
-    height:10vh;
-  }
-  
-  .main {
-    height:90vh;
-  }
-  
-  .notepad {
-    width:70vw;
+    height:5vh;
+    color:white;
+    padding:1vh;
+}
+
+.topbar h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size:4vh;
+    margin:0;
+}
+
+.main {
+    height:95vh;
+}
+
+.notepad {
+    width:80vw;
     float:left;
     height:100%;
     background-color:#0F0F1E;
-  }
-  
-  .sidebar {
-    width:30vw;
+}
+
+.sidebar {
+    width:20vw;
     float:left;
     height:100%;
     background-color: #1F1F3C;
-  }
-  
-  textarea{
+}
+
+textarea{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
     background-color: transparent;
     resize:none;
     color:white;
-    padding:2%;
+    padding-top:2vh;
+    padding-bottom:2vh;
+    padding-left:2%;
+    padding-right: 2%;
     border:none;
     width:96%;
-    /*height:100%;
-    clear:both;*/
-  }
+    height:90vh;
+    clear:both;
+    line-height: 1.8rem;
+}
