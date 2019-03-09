@@ -13,6 +13,8 @@ app.get('/api/random_word', (req,res) => {
     res.send(random_word);
 })
 
-app.listen(3000, () => {
-  console.log('server started');
+const port = process.env.PORT || 3010;
+
+app.listen(port, () => {
+  console.log('server started on port ' + port);
 });
