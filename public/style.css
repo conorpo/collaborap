@@ -15,13 +15,14 @@ body {
     background-color:#050510;
     height:5vh;
     color:white;
-    padding:1vh;
 }
 
 .topbar h1{
+    float:left;
     font-family: 'Montserrat', sans-serif;
     font-size:4vh;
     margin:0;
+    width: 20vw;
 }
 
 .main {
@@ -29,14 +30,14 @@ body {
 }
 
 .notepad {
-    width:80vw;
+    width:82vw;
     float:left;
     height:100%;
     background-color:#0F0F1E;
 }
 
 .sidebar {
-    width:20vw;
+    width:18vw;
     float:left;
     height:100%;
     background-color: #1F1F3C;
@@ -50,7 +51,7 @@ textarea{
     color:white;
     padding-top:2vh;
     padding-bottom:2vh;
-    padding-left:2%;
+    padding-left: 2%;
     padding-right: 2%;
     border:none;
     width:96%;
@@ -58,3 +59,53 @@ textarea{
     clear:both;
     line-height: 1.8rem;
 }
+
+
+/* Tabs */
+
+/* Style the tab */
+.tab {
+    width: 18vw;
+    height: 100%;
+    float: right;
+    overflow: hidden;
+    background-color: #050510;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: black 2px 2px;
+    color: white;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height:100%;
+    width:6vw;
+    padding: 5px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #101020;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #1F1F3C;
+}
+
+.tab button img{
+    width: 2vw;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 6px 12px;
+} 

@@ -9,20 +9,42 @@
   <meta name="author" content="Conor O'Malley">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet"> 
   <link rel="stylesheet" href="style.css">
-
+  <script src="main.js"></script>
 </head>
 
-<body>
-  <script src="script.js"></script>
+<body onload="init()">
   <div class="topbar">
-      <h1>CollobRap</h1>
+      <h1>CollaboRap</h1>
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Write')" id="defaultOpen">
+            <img src="./assets/write.png" alt="Write">
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Rap')">
+            <img src="./assets/rap.png" alt="Rap">
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Collaborate')">
+            <img src="./assets/collaborate.png" alt="Collaborate">
+        </button>
+      </div>
   </div>
   </div>
   <div class="main">
     <div class="notepad">
       <textarea></textarea>
     </div>
-    <div class="sidebar"></div>
+    <div class="sidebar">
+        <div id="Write" class="tabcontent">
+            Content for the writing section
+        </div>
+        
+        <div id="Rap" class="tabcontent">
+            Content for the rap section
+        </div>
+        
+        <div id="Collaborate" class="tabcontent">
+            Content for the collaborate section
+        </div>
+    </div>
   </div>
 </body>
 </html>
