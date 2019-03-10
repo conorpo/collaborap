@@ -21,13 +21,52 @@ function openCity(evt, cityName) {
 
 function init(){
     document.getElementById("defaultOpen").click();
-    
+    const text = document.getElementById("notepad");
+    text.addEventListener("keydown",function(evt){
+        const key = evt.key
+        if(key == "Tab"){
+            evt.preventDefault();
+            const start = text.selectionStart;
+            text.value = text.value.slice(0,start) + "\t" + text.value.slice(start);
+            text.selectionStart = text.selectionEnd = start + 1;
+        }
+        else if(key == "ArrowUp" || key == "ArrowDown" || key == "Enter"){
+            setTimeout(() => {
+                const endOfLastLine = text.value.lastIndexOf("\n", text.selectionStart);
+                const startOfLastWord = Math.max(text.value.lastIndexOf(" ", endOfLastLine - 2), text.value.lastIndexOf("\n", endOfLastLine - 2))
+                const lastWord = text.value.slice(startOfLastWord + 1, endOfLastLine + 1);
+                getRhymes(lastWord);
+            },5);
+        }
+    }, false)
 }
 
 function inspire(){
-    fetch("http://127.0.0.1:3000/api/random_word")
+    fetch("/api/random_word")
     .then(response => response.text())
+    .then(response => console.log(response));
+}
+
+let timeout;
+function input(){
+    clearInterval(timeout);
+    timeout = setTimeout(() => {
+        save();
+    }, 1500)
+}
+
+function save(){
+    console.log("SAVED!");
+}
+
+function getRhymes(lastWord){
+    fetch("https://api.datamuse.com/words?rel_rhy=" + lastWord)
+    .then(response => response.json())
     .then(response => {
-        
+       const rhymes = response.slice(0,10)
+                              .map(el => el.word);
+       console.log(rhymes)
+       const element = document.getElementById("rhymes");
+       element.innerText = rhymes.join(", ");
     });
 }

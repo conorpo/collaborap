@@ -36,11 +36,30 @@ body {
     background-color:#0F0F1E;
 }
 
+/* Sidebar Stuff */
 .sidebar {
     width:18vw;
     float:left;
     height:100%;
     background-color: #1F1F3C;
+}
+
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 1vw;
+    padding-top: 0;
+} 
+
+.feature {
+    box-sizing: border-box;
+    width:16vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding: 1vw;
+    height: 20vh;
+    border: solid 1px;
+    border-radius: 3px;
 }
 
 textarea{
@@ -104,8 +123,3 @@ textarea{
 }
 
 /* Style the tab content */
-.tabcontent {
-    color: white;
-    display: none;
-    padding: 6px 12px;
-} 
