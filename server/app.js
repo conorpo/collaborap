@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
-const words;
+let words;
 if(process.env.docSplit == "Yes"){
   words = fs.readFileSync(path.join(__dirname,'words.txt'), 'utf8').split("\\");
 }else{
