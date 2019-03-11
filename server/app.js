@@ -4,7 +4,7 @@ const path = require('path');
 
 let words;
 if(process.env.docSplit == "Yes"){
-  words = fs.readFileSync(path.join(__dirname,'words.txt'), 'utf8').split("\\");
+  words = fs.readFileSync(path.join(__dirname,'words.txt'), 'utf8').split("\n");
 }else{
   words = fs.readFileSync(path.join(__dirname,'words.txt'), 'utf8').split('\r\n');
 }
