@@ -15,7 +15,6 @@ app.use(express.static(path.join(__dirname,'..', 'public')));
 
 app.get('/api/random_word', (req,res) => {
     const random_word = words[Math.floor(Math.random()*words.length)];
-    console.log(words);
     res.send(random_word);
 })
 
