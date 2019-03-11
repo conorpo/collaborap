@@ -9,6 +9,8 @@ if(process.env.docSplit == "Yes"){
   words = fs.readFileSync(path.join(__dirname,'words.txt'), 'utf8').split('\r\n');
 }
 
+const app = express();
+
 app.use(express.static(path.join(__dirname,'..', 'public')));
 
 app.get('/api/random_word', (req,res) => {
