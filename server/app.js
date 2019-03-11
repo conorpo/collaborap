@@ -2,9 +2,12 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
-const words = fs.readFileSync(path.join(__dirname,'words.txt'), 'utf8').split('\r\n');
-
-const app = express();
+const words;
+if(process.env.docSplit == "Yes"){
+  words = fs.readFileSync(path.join(__dirname,'words.txt'), 'utf8').split("\\");
+}else{
+  words = fs.readFileSync(path.join(__dirname,'words.txt'), 'utf8').split('\r\n');
+}
 
 app.use(express.static(path.join(__dirname,'..', 'public')));
 
