@@ -44,7 +44,9 @@ function init(){
 function inspire(){
     fetch("/api/random_word")
     .then(response => response.text())
-    .then(response => console.log(response));
+    .then(response => {
+        document.getElementById("inspire").innerText = response;
+    });
 }
 
 let timeout;
@@ -56,6 +58,10 @@ function input(){
 }
 
 function save(){
+    const save = {
+
+    }
+    localStorage.setItem("save",JSON.stringify(save));
     console.log("SAVED!");
 }
 
